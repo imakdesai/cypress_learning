@@ -8,11 +8,12 @@ var expect = chai.expect;
 
 
 describe('User logins to the application',() => {
-    it('user logs in to the application', () => {
+    it.only('user logs in to the application', () => {
         cy.visit('/');
         loginPageObhject.addText('Username', cred.Login.userName);
         loginPageObhject.addText('Password', cred.Login.password);
-        loginPageObhject.clickButton('Login')
+        loginPageObhject.clickButton('Login');
+        loginPageObhject.verifyText('ProductLogo','Products')
     });
 
     it('user enters incorrect credentials', () => {
@@ -25,13 +26,9 @@ describe('User logins to the application',() => {
         loginPageObhject.verifyText('validation','Epic sadface: Username and password do not match any user in this service');
     });
 
-    it.only('user enters incorrect credentials', () => {
-        var randomName = '';
-        var randomPassword = '';
+    it('user clicks on login without entering the credentials', () => {
         cy.visit('/');
-        loginPageObhject.addText('Username', randomName);
-        loginPageObhject.addText('Password',randomPassword);
         loginPageObhject.clickButton('Login');
-        loginPageObhject.verifyText('validation','Epic sadface: Username and password do not match any user in this service');
+        loginPageObhject.verifyText('validation','Epic sadface: Username is required');
     });
-})
+});
