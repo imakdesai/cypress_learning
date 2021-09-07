@@ -18,6 +18,10 @@ const queryHashField = {
     'validation' : {
         fieldName : 'validation',
         fieldLocator : `[data-test=error]`
+    },
+    'ProductLogo' : {
+        fieldName : 'Product',
+        fieldLocator :'#header_container > div.header_secondary_container > span'
     }
 
 }
@@ -37,5 +41,12 @@ export class LoginPageObject {
     verifyText(fieldName, fieldValue) {
         let property = queryHashField[fieldName].fieldLocator;
         cy.get(property).invoke('text').should('contain', fieldValue )
+    }
+
+    loginFunction() {
+        cy.visit('/');
+        this.addText('Username',credentials.Login.userName);
+        this.addText('Password',credentials.Login.password);
+        this.clickButton('Login');
     }
 }
