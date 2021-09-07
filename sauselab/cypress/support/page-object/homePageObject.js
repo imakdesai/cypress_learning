@@ -16,9 +16,21 @@ const queryHashField = {
         fieldName : 'addToCart',
         fieldLocator : '[data-test=add-to-cart-sauce-labs-backpack]'
     },
+    'remove': {
+        fieldName : 'removeFromCard',
+        fieldLocator : '[data-test=remove-sauce-labs-backpack]'
+    },
     'image' : {
         fieldName : 'image',
         fieldLocator : '#item_4_img_link > .inventory_item_img'
+    },
+    'shoppingCart' : {
+        fieldName : 'shoppingCart',
+        fieldLocator : '.shopping_cart_link'
+    },
+    'ShoppingCartBadge' : {
+        fieldName : 'shoppingCartBadge',
+        fieldLocator : '.shopping_cart_badge'
     }
 
     // 'image' : {
@@ -41,7 +53,7 @@ export class HomePageObject {
 
     verifyText(fieldName, fieldValue) {
         let property = queryHashField[fieldName].fieldLocator;
-        cy.get(property).invoke('text').should('contain', fieldValue )
+        cy.get(property).invoke('text').should('contain', fieldValue);
     }
 
     verifyImage(fieldName,fieldValue) {
