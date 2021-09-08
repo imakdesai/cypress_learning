@@ -9,7 +9,7 @@ describe('Verify Shopping cart', () => {
         homePageObject.clickButton('addToCart');
     });
 
-    it.only('VerifyInventoryDetail', () => {
+    it('VerifyInventoryDetail', () => {
         homePageObject.verifyText('ShoppingCartBadge', productFile.product.quantity);
         homePageObject.clickButton('shoppingCart');
         shoppingCartPageObject.verifyText('inventoryName', productFile.product.ProductTitle );
