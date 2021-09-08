@@ -8,7 +8,7 @@ var expect = chai.expect;
 
 
 describe('User logins to the application',() => {
-    it.only('user logs in to the application', () => {
+    it('user logs in to the application', () => {
         cy.visit('/');
         loginPageObhject.addText('Username', cred.Login.userName);
         loginPageObhject.addText('Password', cred.Login.password);
