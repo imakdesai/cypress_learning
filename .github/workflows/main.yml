@@ -6,11 +6,12 @@ jobs:
     environment:
       name: sasuelab
       url: https://www.saucedemo.com
-    with:
-      baseUrl: ${{ github.BASE_URL }}
-      userName : "${{ github.PASSWORD }}",
-      password : "${{ github.USERNAME }}"
     steps:
+      - name: setup secrets
+        with:
+          baseUrl: ${{ github.BASE_URL }}
+          userName : "${{ github.PASSWORD }}",
+          password : "${{ github.USERNAME }}"
       - name: Checkout master
         uses: actions/checkout@v2
       - name: navigate to smoke test
