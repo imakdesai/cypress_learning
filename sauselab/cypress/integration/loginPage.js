@@ -1,6 +1,4 @@
-import { createYield } from "typescript";
 import { LoginPageObject } from "../support/page-object/loginPageObject";
-const cred = require('./../fixtures/cred.json')
 const loginPageObhject = new LoginPageObject();
 const faker = require('faker');
 var expect = chai.expect;
@@ -10,8 +8,8 @@ var expect = chai.expect;
 describe('User logins to the application',() => {
     it('user logs in to the application', () => {
         cy.visit('/');
-        loginPageObhject.addText('Username', cred.Login.userName);
-        loginPageObhject.addText('Password', cred.Login.password);
+        loginPageObhject.addText('Username', Cypress.env('userName'));
+        loginPageObhject.addText('Password', Cypress.env('password'));
         loginPageObhject.clickButton('Login');
         loginPageObhject.verifyText('ProductLogo','Products')
     });

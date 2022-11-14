@@ -1,6 +1,3 @@
-import { createYield } from 'typescript';
-
-const credentials = require('./../../fixtures/cred.json');
 
 const queryHashField = {
     'Username': {
@@ -45,8 +42,8 @@ export class LoginPageObject {
 
     loginFunction() {
         cy.visit('/');
-        this.addText('Username',credentials.Login.userName);
-        this.addText('Password',credentials.Login.password);
+        this.addText('Username',Cypress.env('userName'));
+        this.addText('Password',Cypress.env('password'));
         this.clickButton('Login');
     }
 }
