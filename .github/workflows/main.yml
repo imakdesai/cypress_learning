@@ -14,8 +14,7 @@ jobs:
         run : |
             cd sauselab
             npm i
-      - name : run test 
-        run : npm run cypress:open:sauselab
+      - name : run test
         env:
           CYPRESS_BASEURL: ${{ secrets.BASE_URL }}
       - name: print value 
