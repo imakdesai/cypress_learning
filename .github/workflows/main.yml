@@ -7,16 +7,15 @@ jobs:
       name: sasuelab
       url: https://www.saucedemo.com
     steps:
-      - name: setup secrets
-        env:
-          baseUrl: ${{ github.BASE_URL }}
-          userName : "${{ github.PASSWORD }}",
-          password : "${{ github.USERNAME }}"
       - name: Checkout master
         uses: actions/checkout@v2
       - name: navigate to smoke test
         run : cd sauselab
       - name: Install Nodejs
         run: npm ci
+        env:
+          baseUrl: ${{ github.BASE_URL }}
+          userName : "${{ github.PASSWORD }}",
+          password : "${{ github.USERNAME }}"
       - name: Cypress smoke execute
         run: npm run cypress:open:sauselab
