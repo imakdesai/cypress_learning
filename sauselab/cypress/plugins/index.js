@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-const { addMatchImageSnapshotPlugin } = require('cypress-image-snapshot/plugin');
 
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
@@ -30,7 +29,6 @@ function getConfigurationByFile(file) {
  * @type {Cypress.PluginConfig}
  */
 module.exports = (on, config) => {
-  addMatchImageSnapshotPlugin(on, config);
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
   const file = config.env.fileConfig || 'cred';
