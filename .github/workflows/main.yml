@@ -8,7 +8,7 @@ jobs:
       url: https://www.saucedemo.com
     steps:
       - name: setup secrets
-        with:
+        env:
           baseUrl: ${{ github.BASE_URL }}
           userName : "${{ github.PASSWORD }}",
           password : "${{ github.USERNAME }}"
