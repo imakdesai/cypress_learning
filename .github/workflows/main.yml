@@ -9,7 +9,7 @@ jobs:
       - name: Install Nodjs
         uses: actions/setup-node@v2
         with:
-          node-version: 6
+          node-version: 12
       - name: Install Dependencies
         run : |
             cd sauselab
