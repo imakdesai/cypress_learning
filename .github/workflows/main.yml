@@ -12,7 +12,7 @@ jobs:
       - name: navigate to smoke test
         run : |
           cd sauselab
-          echo: "pwd"
+          echo: "working-directory"
       - name: Install Nodejs
         run: |
           npm i
