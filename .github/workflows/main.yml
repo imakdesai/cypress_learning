@@ -15,8 +15,8 @@ jobs:
         run: |
           npm i
           npm run cypress:open:sauselab
-        env:
+        with:
           baseUrl: ${{ github.BASE_URL }}
-          userName : "${{ github.PASSWORD }}",
+          userName : "${{ github.PASSWORD }}"
           password : "${{ github.USERNAME }}"
 
