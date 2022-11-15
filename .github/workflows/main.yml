@@ -14,10 +14,9 @@ jobs:
         run : |
             cd sauselab
             npm i
-      - name : run test
         env:
           CYPRESS_BASEURL: ${{ secrets.BASE_URL }}
       - name: print value 
-        run: "CYPRESS_BASEURL"
+        run: echo "CYPRESS_BASEURL"
         
         
