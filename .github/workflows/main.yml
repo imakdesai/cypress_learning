@@ -15,6 +15,3 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: run cypresss
-        run: npm run cypress:open:sauselab
-   
