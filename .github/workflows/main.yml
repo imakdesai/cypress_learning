@@ -10,7 +10,9 @@ jobs:
       - name: Checkout master
         uses: actions/checkout@v2
       - name: navigate to smoke test
-        run : cd sauselab
+        run : |
+          cd sauselab
+          echo: "pwd"
       - name: Install Nodejs
         run: |
           npm i
