@@ -3,16 +3,17 @@ on: workflow_dispatch
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    environment:
-      name: sasuelab
-      url: https://www.saucedemo.com
     steps:
       - name: Checkout master
         uses: actions/checkout@v2
-      - name: navigate to smoke test
-        run: |
-          cd sauselab
-          npm i
-      - uses: actions/setup-node@v3
+      - name: navigate to the working folder
+        run: cd sauselab
+      - name: Install Nodjs
+        uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: Install Dependencies
+        run : npm i
+      - name : run test
+        run : nmp run cypress:open:sauselab
+        
