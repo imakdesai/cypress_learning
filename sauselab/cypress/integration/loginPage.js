@@ -1,6 +1,6 @@
 import { LoginPageObject } from "../support/page-object/loginPageObject";
 const loginPageObhject = new LoginPageObject();
-const faker = require('faker');
+import { faker } from '@faker-js/faker';
 var expect = chai.expect;
 
 
