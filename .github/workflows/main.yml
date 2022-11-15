@@ -10,7 +10,7 @@ jobs:
       - name: Checkout master
         uses: actions/checkout@v2
       - name: navigate to smoke test
-        working-directory: /sauselab
+        working-directory: ./sauselab
         run: |
           npm i
           npm run cypress:open:sauselab
