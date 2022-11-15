@@ -6,8 +6,6 @@ jobs:
     steps:
       - name: Checkout master
         uses: actions/checkout@v2
-      - name: navigate to the working folder
-        run: cd sauselab
       - name: Install Nodjs
         uses: actions/setup-node@v2
         with:
