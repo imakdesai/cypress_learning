@@ -11,7 +11,6 @@ jobs:
         uses: actions/checkout@v2
       - name: navigate to smoke test
         working-directory: /sauselab
-      - name: Install Nodejs
         run: |
           npm i
           npm run cypress:open:sauselab
