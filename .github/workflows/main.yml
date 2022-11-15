@@ -17,6 +17,6 @@ jobs:
           npm run cypress:open:sauselab
         with:
           baseUrl: ${{ github.BASE_URL }}
-          userName : "${{ github.PASSWORD }}"
-          password : "${{ github.USERNAME }}"
+          userName : ${{ github.PASSWORD }}
+          password : ${{ github.USERNAME }}
 
