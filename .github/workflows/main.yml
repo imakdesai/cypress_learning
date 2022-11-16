@@ -3,6 +3,8 @@ on: workflow_dispatch
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    env:
+      CYPRESS_BASEURL: ${{ secrets.BASE_URL }}
     steps:
       - name: Checkout master
         uses: actions/checkout@v2
@@ -14,8 +16,6 @@ jobs:
         run : |
             cd sauselab
             npm i
-        env:
-          CYPRESS_BASEURL: ${{ secrets.BASE_URL }}
       - name: print value 
         run: echo $CYPRESS_BASEURL
         
