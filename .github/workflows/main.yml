@@ -17,6 +17,6 @@ jobs:
         env:
           CYPRESS_BASEURL: ${{ secrets.BASE_URL }}
       - name: print value 
-        run: echo "CYPRESS_BASEURL"
+        run: echo $CYPRESS_BASEURL
         
         
