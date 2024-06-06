@@ -16,21 +16,17 @@ const queryHashField = {
         fieldName : 'validation',
         fieldLocator : `[data-test=error]`
     },
-    'ProductLogo' : {
-        fieldName : 'Product',
-        fieldLocator :'#header_container > div.header_secondary_container > span'
-    }
-
 }
 
 export class LoginPageObject {
 
     addText(fieldName, fieldValue) {
         let property = queryHashField[fieldName].fieldLocator;
-        cy.get(property).type(fieldValue);
+        cy.get(property).type(fieldValue, {delay : 200});
     }
 
     clickButton(fieldName) {
+        cy.wait(500);
         let property = queryHashField[fieldName].fieldLocator;
         cy.get(property).click();
     }
@@ -40,10 +36,11 @@ export class LoginPageObject {
         cy.get(property).invoke('text').should('contain', fieldValue )
     }
 
-    loginFunction() {
+    loginFunction(username, password) {
         cy.visit('/');
-        this.addText('Username',Cypress.env('userName'));
-        this.addText('Password',Cypress.env('password'));
+        this.addText('Username',username);
+        this.addText('Password',password);
         this.clickButton('Login');
     }
 }
+
